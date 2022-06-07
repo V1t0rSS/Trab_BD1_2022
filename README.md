@@ -5,9 +5,8 @@ Trabalho desenvolvido durante a disciplina de BD1
 
 ### 1. COMPONENTES<br>
 Integrantes do grupo<br>
-primeiro_componente_do_grupo:vitor.silva.ifes@gmail.com<br>
-segundo_componente_do_grupo:camilavolponi19@gmail.com<br>
-...<br>
+Vitor Siqueira da Silva:vitor.silva.ifes@gmail.com<br>
+Camila Fornaciari Volponi:camilavolponi19@gmail.com<br>
 
 ### 2.INTRODUÇÃO E MOTIVAÇÃO<br>
 Este documento contém a especificação do projeto do banco de dados <nome do projeto> 
@@ -24,9 +23,9 @@ Descrição textual das regras de negócio definidas como um  subconjunto do mun
 cujos elementos são propriedades que desejamos incluir, processar, armazenar, 
 gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
 
-> Uma pessoa deseja possuir um sistema para gerenciar sua empresa de confeitaria, registrando pedidos, produtos e funcionários. Para cadastrar sua empresa ele precisa de CNPJ e nome, e informar seu CPF, nome, telefone, e-mail e senha, e ficará automaticamente com o cargo de proprietário. Ele como cargo proprietário, poderá cadastrar outros funcionários com os mesmos atributos que ele, que podem possuir mais de um cargo. <br><br>
+> Uma pessoa deseja possuir um sistema para gerenciar sua empresa de confeitaria, registrando pedidos, produtos e funcionários. Para cadastrar sua empresa ele precisa de CNPJ e nome, e informar seu CPF, nome, telefone, e-mail e senha, e ficará automaticamente com o cargo de proprietário. Ele como cargo proprietário, poderá cadastrar outros funcionários com os mesmos atributos que ele, que podem possuir mais de um cargo. <br>
  
-Do produto ele precisa saber o nome, preço e quantidade, onde terá acesso aos ingredientes e aos modos de preparo. Dos ingredientes precisa-se de nome, quantidade e unidade de medida e do modo de preparo precisa-se de cada passo para o preparo do produto e a ordem que será na receita. Além disso, do pedido ele precisa ter a data de entrega e horário previstos, forma de pagamento e ter os dados do cliente registrado, como nome, telefone e endereço.
+> Do produto ele precisa saber o nome, preço e quantidade, onde terá acesso aos ingredientes e aos modos de preparo. Dos ingredientes precisa-se de nome, quantidade e unidade de medida e do modo de preparo precisa-se de cada passo para o preparo do produto e a ordem que será na receita. Além disso, do pedido ele precisa ter a data de entrega e horário previstos, forma de pagamento e ter os dados do cliente registrado, como nome, telefone e endereço.
 
 
 ### 4.PROTOTIPAÇÃO, PERGUNTAS A SEREM RESPONDIDAS E TABELA DE DADOS<br>
@@ -66,7 +65,7 @@ Neste ponto a codificação não e necessária, somente as ideias de telas devem
         Criar o esquema de forma a garantir a redução de informação redundante, possibilidade de valores null, 
         e tuplas falsas (Aplicar os conceitos de normalização abordados).   
         
-![Alt text](https://github.com/discipbd1/trab01/blob/master/images/concept_sample.png?raw=true "Modelo Conceitual")
+![Alt text](https://github.com/V1t0rSS/Trab_BD1_2022/blob/master/images/modeloConceitual.png)
     
     
         
@@ -84,15 +83,81 @@ Neste ponto a codificação não e necessária, somente as ideias de telas devem
 
 
 ### 6	MODELO LÓGICO<br>
-        a) inclusão do esquema lógico do banco de dados
-        b) verificação de correspondencia com o modelo conceitual 
-        (não serão aceitos modelos que não estejam em conformidade)
-
+![Alt text](https://github.com/V1t0rSS/Trab_BD1_2022/blob/master/images/modeloLogico.png)
+ 
 ### 7	MODELO FÍSICO<br>
-        a) inclusão das instruções de criacão das estruturas em SQL/DDL 
-        (criação de tabelas, alterações, etc..) 
-        
-       
+    a) Criação tabela pedido
+ 
+     CREATE TABLE pedido (
+       cod_pedido INTEGER PRIMARY KEY,
+       data_hora_criacao TIMESTAMP,
+       data_hora_entrega_prevista TIMESTAMP,
+       preco FLOAT(4),
+       fk_cod_tipo_pagamento INTEGER,
+       fk_CLIENTE_cod_pessoa INTEGER );
+
+    b) Criação tabela tipo_pagamento
+ 
+    CREATE TABLE tipo_pagamento (
+       cod_tipo_pagamento INTEGER PRIMARY KEY,
+       descricao VARCHAR(50) );
+
+* Criação tabela pedido_produto
+ 
+>CREATE TABLE pedido_produto (<br>
+	quantidade INTEGER,<br>
+	fk_cod_pedido INTEGER,<br>
+	fk_cod_produto INTEGER,<br>
+	PRIMARY KEY(fk_cod_pedido, fk_cod_produto) ); <br>
+ 
+* Criação tabela produto 
+ 
+>CREATE TABLE produto (<br>
+    cod_produto INTEGER PRIMARY KEY,<br>
+    nome VARCHAR(50),<br>
+    preco FLOAT(4) );<br>
+ 
+* Criação tabela preparo
+ 
+>CREATE TABLE preparo (<br>
+    cod_preparo INTEGER PRIMARY KEY,<br>
+    descricao_passo VARCHAR(100),<br>
+    ordem INTEGER,<br>
+    fk_cod_produto INTEGER );<br>
+ 
+* Criação tabela produto_ingrediente
+ 
+>CREATE TABLE produto_ingrediente (<br>
+	   quantidade INTEGER,<br>
+    fk_cod_produto INTEGER,<br>
+    fk_cod_ingrediente INTEGER,<br>
+	   PRIMARY KEY(fk_cod_produto,fk_cod_ingrediente) );<br>
+ 
+* Criação tabela ingrediente
+ 
+>CREATE TABLE ingrediente (<br>
+    cod_ingrediente INTEGER PRIMARY KEY,<br>
+    nome VARCHAR(50),<br>
+    fk_cod_tipo_medida INTEGER );<br>
+ 
+* Criação tabela tipo_medida 
+
+>CREATE TABLE tipo_medida (<br>
+    cod_tipo_medida INTEGER PRIMARY KEY,<br>
+    descricao VARCHAR(50) );<br>
+
+* Criação tabela cliente
+ 
+>CREATE TABLE cliente (<br>
+    fk_cod_pessoa INTEGER PRIMARY KEY,<br>
+    fk_cod_endereco INTEGER );<br>
+
+* Criação tabela pessoa
+
+>CREATE TABLE pessoa (<br>
+    cod_pessoa INTEGER PRIMARY KEY,<br>
+    nome VARCHAR(50) );<br>
+ 
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
         a) inclusão das instruções de inserção dos dados nas tabelas criadas pelo script de modelo físico
         (Drop para exclusão de tabelas + create definição de para tabelas e estruturas de dados + insert para dados a serem inseridos)
