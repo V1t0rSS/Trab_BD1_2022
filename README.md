@@ -86,6 +86,10 @@ CREATE TABLE pedido (
  fk_cod_tipo_pagamento INTEGER,
  fk_CLIENTE_cod_pessoa INTEGER 
 );
+
+ALTER TABLE pedido		 
+ADD CONSTRAINT fk_tipo_pagamento FOREIGN KEY (fk_cod_tipo_pagamento) REFERENCES tipo_pagamento(cod_tipo_pagamento),
+ADD CONSTRAINT fk_cliente FOREIGN KEY (fk_CLIENTE_cod_pessoa) REFERENCES cliente(fk_cod_pessoa);
 ```
 
 * Criação tabela tipo_pagamento
@@ -104,6 +108,10 @@ CREATE TABLE pedido_produto (
  fk_cod_pedido INTEGER,
  fk_cod_produto INTEGER
 );
+
+ALTER TABLE pedido_produto		 
+ADD CONSTRAINT fk_pedido FOREIGN KEY (fk_cod_pedido) REFERENCES pedido(cod_pedido),
+ADD CONSTRAINT fk_produto FOREIGN KEY (fk_cod_produto) REFERENCES produto(cod_produto);
 ```
 
 * Criação tabela produto 
@@ -123,6 +131,9 @@ CREATE TABLE preparo (
  ordem INTEGER,
  fk_cod_produto INTEGER 
 );
+
+ALTER TABLE preparo
+ADD CONSTRAINT fk_produto_preparo FOREIGN KEY(fk_cod_produto) REFERENCES produto(cod_produto);
 ```
 
 * Criação tabela produto_ingrediente
@@ -133,6 +144,10 @@ CREATE TABLE produto_ingrediente (
  fk_cod_produto INTEGER,
  fk_cod_ingrediente INTEGER
 );
+
+ALTER TABLE produto_ingrediente		 
+ADD CONSTRAINT fk_produto_ingre FOREIGN KEY(fk_cod_produto) REFERENCES produto(cod_produto),
+ADD CONSTRAINT fk_ingrediente FOREIGN KEY(fk_cod_ingrediente) REFERENCES ingrediente(cod_ingrediente);
 ```
  
 * Criação tabela ingrediente
@@ -142,6 +157,9 @@ CREATE TABLE ingrediente (
  nome VARCHAR(50),
  fk_cod_tipo_medida INTEGER 
 );
+
+ALTER TABLE ingrediente		 
+ADD CONSTRAINT fk_tipo_medida FOREIGN KEY(fk_cod_tipo_medida) REFERENCES tipo_medida(cod_tipo_medida);
 ```
 
 * Criação tabela tipo_medida 
@@ -158,6 +176,9 @@ CREATE TABLE cliente (
  fk_cod_pessoa INTEGER PRIMARY KEY,
  fk_cod_endereco INTEGER 
 );
+
+ALTER TABLE cliente		 
+ADD CONSTRAINT fk_pessoa_cliente FOREIGN KEY(fk_cod_pessoa) REFERENCES pessoa(cod_pessoa);
 ```
 
 * Criação tabela pessoa
@@ -296,54 +317,9 @@ INSERT INTO pessoa VALUES
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
 
-* Consulta dos dados na tabela pedido
+* Consulta no COLAB
 ```
-
-```
-
-* Consulta dos dados na tabela tipo_pagamento
-```
-
-```
-
-* Consulta dos dados na tabela pedido_produto
-``` 
-
-```
-
-* Consulta dos dados na tabela produto 
-``` 
-
-```
-
-* Consulta dos dados na tabela preparo
-```
-
-```
-
-* Consulta dos dados na tabela produto_ingrediente
-```
-
-```
- 
-* Consulta dos dados na tabela ingrediente
-``` 
-
-```
-
-* Consulta dos dados na tabela tipo_medida 
-```
-
-```
-
-* Consulta dos dados na tabela cliente
-``` 
-
-```
-
-* Consulta dos dados na tabela pessoa
-```
-
+~link~
 ```
 
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
