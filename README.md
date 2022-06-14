@@ -4,8 +4,8 @@ Trabalho desenvolvido durante a disciplina de BD1
 # Sumário
 
 ### 1. COMPONENTES<br>
-Vitor Siqueira da Silva:vitor.silva.ifes@gmail.com<br>
-Camila Fornaciari Volponi:camilavolponi19@gmail.com<br>
+Vitor Siqueira da Silva: vitor.silva.ifes@gmail.com<br>
+Camila Fornaciari Volponi: camilavolponi19@gmail.com<br>
 
 ### 2.INTRODUÇÃO E MOTIVAÇÃO<br>
 Este documento contém a especificação do projeto do banco de dados CandySystem
