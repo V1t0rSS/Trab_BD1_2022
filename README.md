@@ -176,7 +176,6 @@ CREATE TABLE pessoa (
         c) formato .SQL
 
 * Inserir dados na tabela pedido
- 
 ```
 INSERT INTO pedido VALUES
  (1, '2022-05-17 10:11', '2022-05-21 10:11', 100, 1, 1),
@@ -296,6 +295,56 @@ INSERT INTO pessoa VALUES
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
+
+* Consulta dos dados na tabela pedido
+```
+
+```
+
+* Consulta dos dados na tabela tipo_pagamento
+```
+
+```
+
+* Consulta dos dados na tabela pedido_produto
+``` 
+
+```
+
+* Consulta dos dados na tabela produto 
+``` 
+
+```
+
+* Consulta dos dados na tabela preparo
+```
+
+```
+
+* Consulta dos dados na tabela produto_ingrediente
+```
+
+```
+ 
+* Consulta dos dados na tabela ingrediente
+``` 
+
+```
+
+* Consulta dos dados na tabela tipo_medida 
+```
+
+```
+
+* Consulta dos dados na tabela cliente
+``` 
+
+```
+
+* Consulta dos dados na tabela pessoa
+```
+
+```
 
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
