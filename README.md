@@ -316,11 +316,8 @@ INSERT INTO pessoa VALUES
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
+[Consultas no COLAB](https://colab.research.google.com/drive/1OJhC1kUK6bbt_VKg-hz9nJS60OJidT7u?usp=sharing?raw=true "Title")
 
-* Consulta no COLAB
-```
-~link~
-```
 
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
