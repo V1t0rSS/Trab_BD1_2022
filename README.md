@@ -7,19 +7,19 @@ Trabalho desenvolvido durante a disciplina de BD1
 Vitor Siqueira da Silva: vitor.silva.ifes@gmail.com<br>
 Camila Fornaciari Volponi: camilavolponi19@gmail.com<br>
 
-### 2.INTRODUÇÃO E MOTIVAÇÃO<br>
+### 2. INTRODUÇÃO E MOTIVAÇÃO<br>
 Este documento contém a especificação do projeto do banco de dados CandySystem
 <br><br>
 A criação do sistema CandySystem visa gerar uma melhoria na qualidade do trabalho de pequenos e médios confeiteiros ou confeitarias. Isso será feito provendo um sistema flexível capaz de auxiliar no gerenciamento de pedidos, clientes, funcionários e receitas, capaz de ser usado por qualquer organização de pequeno e médio porte.
  
 
-### 3.MINI-MUNDO<br>
+### 3. MINI-MUNDO<br>
 Uma pessoa deseja possuir um sistema para gerenciar sua empresa de confeitaria, registrando pedidos, produtos e funcionários. Para cadastrar sua empresa ele precisa de CNPJ e nome, e informar seu CPF, nome, telefone, e-mail e senha, e ficará automaticamente com o cargo de proprietário. Ele como cargo proprietário, poderá cadastrar outros funcionários com os mesmos atributos que ele, que podem possuir mais de um cargo. <br>
  
 Do produto ele precisa saber o nome, preço e quantidade, onde terá acesso aos ingredientes e aos modos de preparo. Dos ingredientes precisa-se de nome, quantidade e unidade de medida e do modo de preparo precisa-se de cada passo para o preparo do produto e a ordem que será na receita. Além disso, do pedido ele precisa ter a data de entrega e horário previstos, forma de pagamento e ter os dados do cliente registrado, como nome, telefone e endereço.
 
 
-### 4.PROTOTIPAÇÃO, PERGUNTAS A SEREM RESPONDIDAS E TABELA DE DADOS<br>
+### 4. PROTOTIPAÇÃO, PERGUNTAS A SEREM RESPONDIDAS E TABELA DE DADOS<br>
 #### 4.1 RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
 
 ![Primeira página do protótipo](https://github.com/V1t0rSS/Trab_BD1_2022/blob/master/images/prot%C3%B3tipo.png?raw=true "Title")
@@ -45,7 +45,7 @@ Do produto ele precisa saber o nome, preço e quantidade, onde terá acesso aos 
 ![Exemplo de Tabela de dados da Empresa Devcom](https://github.com/discipbd1/trab01/blob/master/arquivos/TabelaEmpresaDevCom_sample.xlsx?raw=true "Tabela - Empresa Devcom")
     
     
-### 5.MODELO CONCEITUAL<br>
+### 5. MODELO CONCEITUAL<br>
     A) Utilizar a Notação adequada (Preferencialmente utilizar o BR Modelo 3)
     B) O mínimo de entidades do modelo conceitual pare este trabalho será igual a 3 e o Máximo 5.
         * informe quais são as 3 principais entidades do sistema em densenvolvimento<br>(se houverem mais de 3 entidades, pense na importância da entidade para o sistema)       
@@ -57,9 +57,7 @@ Do produto ele precisa saber o nome, preço e quantidade, onde terá acesso aos 
         
 ![Alt text](https://github.com/V1t0rSS/Trab_BD1_2022/blob/master/images/modeloConceitual.png)
     
-    
-        
-    
+
 #### 5.1 Validação do Modelo Conceitual
     [Grupo01]: [Nomes dos que participaram na avaliação]
     [Grupo02]: [Nomes dos que participaram na avaliação]
