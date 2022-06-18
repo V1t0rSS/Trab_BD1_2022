@@ -39,11 +39,11 @@ Do produto ele precisa saber o nome, preço e quantidade, onde terá acesso aos 
  
  
 #### 4.3 TABELA DE DADOS DO SISTEMA:    
-[Exemplo de Tabela de dados da CandySystem](https://github.com/V1t0rSS/Trab_BD1_2022/blob/master/arquivos/Tabela%20unificada%20com%2010%20linhas.xlsx?raw=true "Title")
+[Tabela unificada CandySystem](https://github.com/V1t0rSS/Trab_BD1_2022/blob/master/arquivos/Tabela%20unificada%20com%2010%20linhas.xlsx?raw=true "Title")
     
     
 ### 5. MODELO CONCEITUAL<br>
-[Alt text](https://github.com/V1t0rSS/Trab_BD1_2022/blob/master/images/modeloConceitual.png)
+![Alt text](https://github.com/V1t0rSS/Trab_BD1_2022/blob/master/images/modeloConceitual.png)
     
 
 #### 5.1 Validação do Modelo Conceitual
