@@ -24,19 +24,16 @@ Do produto ele precisa saber o nome, preço e quantidade, onde terá acesso aos 
 
 ![Primeira página do protótipo](https://github.com/V1t0rSS/Trab_BD1_2022/blob/master/images/prot%C3%B3tipo.png?raw=true "Title")
 [Arquivo PDF do Protótipo Balsamiq](https://github.com/V1t0rSS/Trab_BD1_2022/blob/master/arquivos/Prototipo.pdf)
-#### 4.2 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
-    a) O sistema proposto poderá fornecer quais tipos de relatórios e informaçes? 
-    b) Crie uma lista com os 5 principais relatórios que poderão ser obtidos por meio do sistema proposto!
-    
-> A Empresa DevCom precisa inicialmente dos seguintes relatórios:
-* Relatório que mostre o nome de cada supervisor(a) e a quantidade de empregados supervisionados.
-* Relatório relativo aos os supervisores e supervisionados. O resultado deve conter o nome do supervisor e nome do supervisionado além da quantidade total de horas que cada supervisionado tem alocada aos projetos existentes na empresa.
-* Relatorio que mostre para cada linha obtida o nome do departamento, o valor individual de cada salario existente no  departamento e a média geral de salarios dentre todos os empregados. Os resultados devem ser apresentados ordenados por departamento.
-* Relatório que mostre as informações relacionadas a todos empregados de empresa (sem excluir ninguém). As linhas resultantes devem conter informações sobre: rg, nome, salario do empregado, data de início do salario atual, nomes dos projetos que participa, quantidade de horas e localização nos referidos projetos, numero e nome dos departamentos aos quais está alocado, informações do historico de salário como inicio, fim, e valores de salarios antigos que foram inclusos na referida tabela (caso possuam informações na mesma), além de todas informações relativas aos dependentes. 
->> ##### Observações: <br> a) perceba que este relatório pode conter linhas com alguns dados repetidos (mas não todos). <br>  b) para os empregados que não possuirem alguma destas informações o valor no registro deve aparecer sem informação/nulo. 
-* Relatório que obtenha a frequencia absoluta e frequencia relativa da quantidade de cpfs únicos no relatório anterior. Apresente os resultados ordenados de forma decrescente pela frequencia relativa.
 
- 
+#### 4.2 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
+    
+> A CandySystem precisa inicialmente dos seguintes relatórios:
+* Relatório contendo o nome e os pedidos feitos por um determinado cliente.
+* Relatório contendo a lista completa de todos os pedidos feitos em um determinado período de tempo, independente do cliente que os realizou.
+* Relatório contendo quais pedidos foram feitos em um determinado período de tempo por um determinado cliente.
+* Relatório de quais são os produtos que estão em um pedido de um determinado cliente.
+* Relatório contendo nome, tipo de medida e quantidade dos ingredientes de um determinado produto.
+* Relatório contendo os passos do preparo de um produto, em ordem.
  
 #### 4.3 TABELA DE DADOS DO SISTEMA:    
 [Tabela unificada CandySystem](https://github.com/V1t0rSS/Trab_BD1_2022/blob/master/arquivos/Tabela%20unificada%20com%2010%20linhas.xlsx?raw=true "Title")
