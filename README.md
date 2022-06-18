@@ -59,15 +59,57 @@ Do produto ele precisa saber o nome, preço e quantidade, onde terá acesso aos 
     
 
 #### 5.1 Validação do Modelo Conceitual
-    [Grupo01]: [Nomes dos que participaram na avaliação]
-    [Grupo02]: [Nomes dos que participaram na avaliação]
+    [Grupo01]: Giovanni Sencioles e Emanuel Norjosa Luz
+    [Grupo02]: Ana Gabriella Gomes de Almeida Ferreira e Pedro Aguiar Alves
 
 #### 5.2 Descrição dos dados 
     [objeto]: [descrição do objeto]
     
-    EXEMPLO:
-    CLIENTE: Tabela que armazena as informações relativas ao cliente<br>
-    CPF: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da empresa.<br>
+    TIPO_PAGAMENTO: Tabela armazena as informações relativas aos tipo de pagamento.<br>
+    codTipoPagamento: Campo que armazena o código único dos tipos de pagamento.<br>
+    descricao: Campo que armazena o nome do tipo de pagamento.<br>
+   
+    Composto_por: Relacionamento entre a tabela TIPO_PAGAMENTO e PEDIDO.<br>
+    
+    PEDIDO: Tabela armazena as informações relativas aos tipo de pagamento.<br>
+    codPedido: Campo que armazena o código único dos pedidos.<br>
+    dataHoraCriacao: Campo que armazena a data e hora da criação do pedido.<br>
+    dataHoraEntregaPrevista: Campo que armazena a data e hora da entrega prevista do pedido.<br>
+    
+    Contem: Relacionamento entre a tabela PEDIDO e CLIENTE.<br>
+    
+    CLIENTE: Tabela armazena as informações relativas aos clientes, e herda informações da tabela pessoa.<br>
+        
+    PESSOA: Tabela armazena as informações relativas as pessoas cadastradas.<br>
+    codPessoa: Campo que armazena o código único das pessoas.<br>
+    nome: Campo que armazena o nome das pessoas.<br>
+    
+    Especificado_por: Relacionamento entre a tabela PEDIDO e PRODUTO.<br>
+    quantidade: Atributo no relecionamento, para gravar a quantidade de produtos em um pedido.<br>
+    
+    PRODUTO: Tabela armazena as informações relativas aos produtos.<br>
+    codProduto: Campo que armazena o código único dos produtos.<br>
+    preco: Campo que armazena o preco do produto.<br>
+    
+    Composto_por: Relacionamento entre a tabela PRODUTO e PREPARO.<br>
+    
+    PREPARO: Tabela armazena as informações relativas aos modo de preparo de um produto.<br>
+    codPreparo: Campo que armazena o código único dos modos de preparos.<br>
+    descricaoDoPasso: Campo que armazena a descrição do passo.<br>
+    ordem: Campo que armazena o código único dos pedidos.<br>
+    
+    Composto_por: Relacionamento entre a tabela PRODUTO e INGREDIENTE.<br>
+    quantidade: Atributo no relecionamento, para gravar a quantidade de ingredientes em um produto.
+    
+    INGREDIENTE: Tabela armazena as informações relativas aos ingrediente de um ou mais produtos.<br>
+    codIngrediente: Campo que armazena o código único dos ingredientes.<br>
+    nome: Campo que armazena o nome do ingrediente.<br>
+    
+    Composto_por: Relacionamento entre a tabela INGREDIENTE e TIPO_MEDIDA.<br>
+    
+    TIPO_MEDIDA: Tabela armazena as informações relativas aos tipo de medida.<br>
+    codTipoMedida: Campo que armazena o código único dos tipos de medida.<br>
+    descricao: Campo que armazena o nome do tipo de medida.<br>
 
 
 ### 6	MODELO LÓGICO<br>
@@ -190,12 +232,6 @@ CREATE TABLE pessoa (
 ```
 
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
-        a) inclusão das instruções de inserção dos dados nas tabelas criadas pelo script de modelo físico
-        (Drop para exclusão de tabelas + create definição de para tabelas e estruturas de dados + insert para dados a serem inseridos)
-        b) Criar um novo banco de dados para testar a restauracao 
-        (em caso de falha na restauração o grupo não pontuará neste quesito)
-        c) formato .SQL
-
 * Inserir dados na tabela pedido
 ```
 INSERT INTO pedido VALUES
