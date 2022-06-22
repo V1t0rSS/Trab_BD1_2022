@@ -14,9 +14,7 @@ A criação do sistema CandySystem visa gerar uma melhoria na qualidade do traba
  
 
 ### 3. MINI-MUNDO<br>
-Uma pessoa deseja possuir um sistema para gerenciar sua empresa de confeitaria, registrando pedidos, produtos e funcionários. Para cadastrar sua empresa ele precisa de CNPJ e nome, e informar seu CPF, nome, telefone, e-mail e senha, e ficará automaticamente com o cargo de proprietário. Ele como cargo proprietário, poderá cadastrar outros funcionários com os mesmos atributos que ele, que podem possuir mais de um cargo. <br>
- 
-Do produto ele precisa saber o nome, preço e quantidade, onde terá acesso aos ingredientes e aos modos de preparo. Dos ingredientes precisa-se de nome, quantidade e unidade de medida e do modo de preparo precisa-se de cada passo para o preparo do produto e a ordem que será na receita. Além disso, do pedido ele precisa ter a data de entrega e horário previstos, forma de pagamento e ter os dados do cliente registrado, como nome, telefone e endereço.
+Uma pessoa deseja possuir um sistema para gerenciar sua empresa de confeitaria, registrando pedidos e produtos. Do produto ele precisa saber o nome, preço e quantidade, onde terá acesso aos ingredientes e aos modos de preparo. Dos ingredientes precisa-se de nome, quantidade e unidade de medida e do modo de preparo precisa-se de cada passo para o preparo do produto e a ordem que será na receita. Além disso, do pedido ele precisa ter a data de entrega e horário previstos, forma de pagamento e ter os dados do cliente registrado, como nome, telefone e endereço.
 
 
 ### 4. PROTOTIPAÇÃO, PERGUNTAS A SEREM RESPONDIDAS E TABELA DE DADOS<br>
@@ -50,30 +48,36 @@ Do produto ele precisa saber o nome, preço e quantidade, onde terá acesso aos 
 #### 5.2 Descrição dos dados 
     [objeto]: [descrição do objeto]
     
-    TIPO_PAGAMENTO: Tabela armazena as informações relativas aos tipo de pagamento.<br>
+    TIPO_PAGAMENTO: Tabela que armazena as informações relativas aos tipo de pagamento.<br>
     codTipoPagamento: Campo que armazena o código único dos tipos de pagamento.<br>
     descricao: Campo que armazena o nome do tipo de pagamento.<br>
    
     Composto_por: Relacionamento entre a tabela TIPO_PAGAMENTO e PEDIDO.<br>
     
-    PEDIDO: Tabela armazena as informações relativas aos tipo de pagamento.<br>
+    PEDIDO: Tabela que armazena as informações relativas aos tipo de pagamento.<br>
     codPedido: Campo que armazena o código único dos pedidos.<br>
     dataHoraCriacao: Campo que armazena a data e hora da criação do pedido.<br>
     dataHoraEntregaPrevista: Campo que armazena a data e hora da entrega prevista do pedido.<br>
     
     Contem: Relacionamento entre a tabela PEDIDO e CLIENTE.<br>
     
-    CLIENTE: Tabela armazena as informações relativas aos clientes, e herda informações da tabela pessoa.<br>
-        
-    PESSOA: Tabela armazena as informações relativas as pessoas cadastradas.<br>
-    codPessoa: Campo que armazena o código único das pessoas.<br>
+    CLIENTE: Tabela que armazena as informações relativas aos clientes.<br>
+    codCliente: Campo que armazena o código único dos clientes.<br>
     nome: Campo que armazena o nome das pessoas.<br>
+    
+    Possui: Relacionamento entre a tabela CLIENTE e TARELA.<br>
+    
+    TELEFONE: Tabela que armazena as informações relativas aos clientes.<br>
+    codTelefone: Campo que armazena o código único dos telefones.<br>
+    descriacao: Campo que armazena o número de telefone.<br>
     
     Especificado_por: Relacionamento entre a tabela PEDIDO e PRODUTO.<br>
     quantidade: Atributo no relecionamento, para gravar a quantidade de produtos em um pedido.<br>
+    preco: Atributo no relecionamento, para gravar o preço de produtos em um pedido.<br>
     
     PRODUTO: Tabela armazena as informações relativas aos produtos.<br>
     codProduto: Campo que armazena o código único dos produtos.<br>
+    nome: Campo que armazena o nome dos produtos.<br>
     preco: Campo que armazena o preco do produto.<br>
     
     Composto_por: Relacionamento entre a tabela PRODUTO e PREPARO.<br>
