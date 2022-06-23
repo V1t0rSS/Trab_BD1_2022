@@ -109,18 +109,18 @@ Uma pessoa deseja possuir um sistema para gerenciar sua empresa de confeitaria, 
 * Criação tabela pedido
  
 ```
-CREATE TABLE pedido (
- cod_pedido INTEGER PRIMARY KEY,
- data_hora_criacao TIMESTAMP,
- data_hora_entrega_prevista TIMESTAMP,
- preco FLOAT(4),
- fk_cod_tipo_pagamento INTEGER,
- fk_CLIENTE_cod_pessoa INTEGER 
+CREATE TABLE pedido(
+	cod_pedido INTEGER PRIMARY KEY,
+	data_hora_criacao TIMESTAMP,
+	data_hora_entrega_prevista TIMESTAMP,
+	preco_total FLOAT(4),
+	fk_cod_tipo_pagamento INTEGER,
+	fk_cod_cliente INTEGER
 );
 
 ALTER TABLE pedido		 
 ADD CONSTRAINT fk_tipo_pagamento FOREIGN KEY (fk_cod_tipo_pagamento) REFERENCES tipo_pagamento(cod_tipo_pagamento),
-ADD CONSTRAINT fk_cliente FOREIGN KEY (fk_CLIENTE_cod_pessoa) REFERENCES cliente(fk_cod_pessoa);
+ADD CONSTRAINT fk_cliente FOREIGN KEY (fk_cod_cliente) REFERENCES cliente(cod_cliente);
 ```
 
 * Criação tabela tipo_pagamento
@@ -133,11 +133,12 @@ CREATE TABLE tipo_pagamento (
 
 * Criação tabela pedido_produto
 ``` 
-CREATE TABLE pedido_produto (
- cod_ped_prod INTEGER PRIMARY KEY,
- quantidade INTEGER,
- fk_cod_pedido INTEGER,
- fk_cod_produto INTEGER
+CREATE TABLE pedido_produto(
+	cod_ped_prod INTEGER PRIMARY KEY,
+	quantidade INTEGER,
+	preco FLOAT,
+	fk_cod_pedido INTEGER,
+	fk_cod_produto INTEGER
 );
 
 ALTER TABLE pedido_produto		 
@@ -204,20 +205,21 @@ CREATE TABLE tipo_medida (
 * Criação tabela cliente
 ``` 
 CREATE TABLE cliente (
- fk_cod_pessoa INTEGER PRIMARY KEY,
- fk_cod_endereco INTEGER 
+    cod_cliente INTEGER PRIMARY KEY,
+    nome VARCHAR(50) 
 );
-
-ALTER TABLE cliente		 
-ADD CONSTRAINT fk_pessoa_cliente FOREIGN KEY(fk_cod_pessoa) REFERENCES pessoa(cod_pessoa);
 ```
 
-* Criação tabela pessoa
+* Criação tabela telefone
 ```
-CREATE TABLE pessoa (
- cod_pessoa INTEGER PRIMARY KEY,
- nome VARCHAR(50) 
+CREATE TABLE telefone (
+    cod_telefone INTEGER PRIMARY KEY,
+    descricao VARCHAR(50),
+	   fk_cod_cliente INTEGER
 );
+
+ALTER TABLE telefone		 
+ADD CONSTRAINT fk_telefone_cliente FOREIGN KEY(fk_cod_cliente) REFERENCES cliente(cod_cliente);
 ```
 
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
@@ -244,14 +246,14 @@ INSERT INTO tipo_pagamento VALUES
 * Inserir dados na tabela pedido_produto
 ``` 
 INSERT INTO pedido_produto VALUES
- (1, 1, 2, 1),
- (2, 2, 3, 3),
- (3, 1, 3, 1),
- (4, 1, 5, 4),
- (5, 1, 5, 5),
- (6, 1, 1, 1),
- (7, 1, 1, 3),
- (8, 5, 4, 5);
+ (1, 1, 50, 2, 1),
+ (2, 2, 50, 3, 3),
+ (3, 1, 50, 3, 1),
+ (4, 1, 30, 5, 4),
+ (5, 1, 20, 5, 5),
+ (6, 1, 50, 1, 1),
+ (7, 1, 50, 1, 3),
+ (8, 5, 20, 4, 5);
 ```
 
 * Inserir dados na tabela produto 
@@ -321,22 +323,23 @@ INSERT INTO tipo_medida VALUES
 * Inserir dados na tabela cliente
 ``` 
 INSERT INTO cliente VALUES
- (1, null),
- (2, null),
- (3, null),
- (4, null),
- (5, null);
-```
-
-* Inserir dados na tabela pessoa
-```
-INSERT INTO pessoa VALUES
  (1, 'Moises da Silva'),
  (2, 'Camila Volponi'),
  (3, 'Mariazinha Feirreira'),
  (4, 'Vitor da Silva'),
  (5, 'Marcelo da Vitória');
 ```
+
+* Inserir dados na tabela telefone
+```
+INSERT INTO telefone VALUES
+ (1, '27 99999-1111', 1),
+ (2, '27 99999-2222', 2),
+ (3, '27 99999-3333', 3),
+ (4, '27 99999-4444', 4),
+ (5, '27 99999-5555', 5);
+```
+[Arquivo em sql - DROP/CREATE/INSERT](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/arquivos/BD-CandySystem.sql?raw=true "Title")
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
