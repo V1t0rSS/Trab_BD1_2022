@@ -10,7 +10,7 @@ Camila Fornaciari Volponi: camilavolponi19@gmail.com<br>
 ### 2. INTRODUÇÃO E MOTIVAÇÃO<br>
 Este documento contém a especificação do projeto do banco de dados CandySystem e motivação da escolha realizada.
 <br><br>
-A criação do sistema CandySystem visa gerar uma melhoria na qualidade do trabalho de pequenos e médios confeiteiros ou confeitarias. Isso será feito provendo um sistema flexível capaz de auxiliar no gerenciamento de pedidos, clientes, funcionários e receitas, capaz de ser usado por qualquer organização de pequeno e médio porte.
+A criação do sistema CandySystem visa gerar uma melhoria na qualidade do trabalho de pequenos e médios confeiteiros ou confeitarias. Isso será feito provendo um sistema flexível capaz de auxiliar no gerenciamento de pedidos e produtos, capaz de ser usado por qualquer organização de pequeno e médio porte.
  
 
 ### 3. MINI-MUNDO<br>
