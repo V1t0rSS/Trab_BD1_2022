@@ -342,14 +342,12 @@ INSERT INTO telefone VALUES
 [Arquivo em sql - DROP/CREATE/INSERT](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/arquivos/BD-CandySystem.sql?raw=true "Title")
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
-    OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
 [Consultas no COLAB](https://colab.research.google.com/drive/1OJhC1kUK6bbt_VKg-hz9nJS60OJidT7u?usp=sharing?raw=true "Title")
 
-
-># Marco de Entrega 01: Do item 1 até o item 9.1<br>
-
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
+[Consultas no COLAB](https://colab.research.google.com/drive/1dNiBibPb6vurhAvR5YxppJmfPXLmLFy9?usp=sharing?usp=sharing?raw=true "Title")
+
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
     b) Criar no mínimo 3 consultas com operadores aritméticos 
