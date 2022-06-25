@@ -348,28 +348,24 @@ INSERT INTO telefone VALUES
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
 [Consultas no COLAB](https://colab.research.google.com/drive/1dNiBibPb6vurhAvR5YxppJmfPXLmLFy9?usp=sharing?usp=sharing?raw=true "Title")
 
-#### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
-    a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
-    b) Criar no mínimo 3 consultas com operadores aritméticos 
-    c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
+#### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11) <br>
+[Consultas no COLAB](https://colab.research.google.com/drive/1942GfBfeyVaW_pVip5UW0IM9Bk-bsKBZ?usp=sharing?raw=true "Title")
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
-    a) Criar outras 5 consultas que envolvam like ou ilike
-    b) Criar uma consulta para cada tipo de função data apresentada.
+[Consultas no COLAB](https://colab.research.google.com/drive/1IS5huMMTbUdI84mEn8GMc25M9Zq_m-mH?usp=sharing?raw=true "Title")
 
 #### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
     a) Criar minimo 3 de exclusão
     b) Criar minimo 3 de atualização
 
 #### 9.6	CONSULTAS COM INNER JOIN E ORDER BY (Mínimo 6)<br>
-    a) Uma junção que envolva todas as tabelas possuindo no mínimo 2 registros no resultado
-    b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
+[Consultas no COLAB](https://colab.research.google.com/drive/1Kz7MayLSaMfWQkr3a8QKjztMmP64176j?usp=sharing?raw=true "Title")
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
-    a) Criar minimo 2 envolvendo algum tipo de junção
+[Consultas no COLAB](https://colab.research.google.com/drive/1vZfDT5thmpoBE70Mz6RdlyPIipsMfxGV?usp=sharing?raw=true "Title")
 
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
-    a) Criar minimo 1 de cada tipo
+[Consultas no COLAB](https://colab.research.google.com/drive/1Hcm0Vt3MAxPxVZBcYJkyvFLpTajzbYgd?usp=sharing?raw=true "Title")
 
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
         a) Uma junção que envolva Self Join (caso não ocorra na base justificar e substituir por uma view)
