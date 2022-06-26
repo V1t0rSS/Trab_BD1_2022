@@ -512,34 +512,171 @@ select cod_pedido, data_hora_entrega_prevista, extract('day' from data_hora_entr
 #### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS<br>
 [Consultas no COLAB - 9.5](https://colab.research.google.com/drive/1h4hulfm60yyMqPPG_WQOSMkcw10b2qWT?usp=sharing?raw=true "Title")
 
+delete from cliente 
+where cod_cliente > 6
+
+delete from telefone 
+where cod_telefone = 7;
+
+delete cascade from cliente
+where cod_cliente = 9;
+
+update produto 
+set preco = 70
+where cod_produto = 5
+
+update telefone 
+set descricao = '21 99555-4596'
+where cod_telefone = 6
+
+update tipo_medida 
+set descricao = 'Porção'
+where cod_tipo_medida = 1
+
 #### 9.6	CONSULTAS COM INNER JOIN E ORDER BY<br>
 [Consultas no COLAB - 9.6](https://colab.research.google.com/drive/1Kz7MayLSaMfWQkr3a8QKjztMmP64176j?usp=sharing?raw=true "Title")
-
+```
+SELECT 	cliente.nome AS nome_cliente, 
+                          telefone.descricao AS telefone_cliente, 
+                          pedido.preco_total, 
+                          pedido.data_hora_entrega_prevista, 
+                          tipo_pagamento.descricao AS tipo_pagamento, 
+                          produto.nome AS nome_produto, 
+                          produto.preco AS preco_produto,
+                          pedido_produto.quantidade AS quantidade_produto_no_pedido,
+                          preparo.ordem AS ordem_passo,
+                          preparo.descricao_passo AS passo,
+                          ingrediente.nome AS ingrediente,
+                          produto_ingrediente.quantidade AS quantidade_ingredientes,
+                          tipo_medida.descricao AS tipo_medida
+                  FROM pedido
+                  INNER JOIN cliente ON (cliente.cod_cliente = pedido.fk_cod_cliente)
+                  INNER JOIN telefone ON (cliente.cod_cliente = telefone.fk_cod_cliente)
+                  INNER JOIN tipo_pagamento ON (tipo_pagamento.cod_tipo_pagamento = pedido.fk_cod_tipo_pagamento)
+                  INNER JOIN pedido_produto ON (pedido.cod_pedido = pedido_produto.fk_cod_pedido)
+                  INNER JOIN produto ON (pedido_produto.fk_cod_produto = produto.cod_produto)
+                  INNER JOIN preparo ON (produto.cod_produto = preparo.fk_cod_produto)
+                  INNER JOIN produto_ingrediente ON (produto.cod_produto = produto_ingrediente.fk_cod_produto)
+                  INNER JOIN ingrediente ON (produto_ingrediente.fk_cod_ingrediente = ingrediente.cod_ingrediente)
+                  INNER JOIN tipo_medida ON (ingrediente.fk_cod_tipo_medida = tipo_medida.cod_tipo_medida)
+                  WHERE cliente.cod_cliente = 1
+                  ORDER BY cliente.nome
+```
 ![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.6/9.6-select1.png)
-
+```
+SELECT  produto.nome as nome_produto,
+                          ingrediente.nome as nome_ingrediente,
+                          produto_ingrediente.quantidade AS quantidade_ingrediente,
+                          tipo_medida.descricao as tipo_medida
+                  FROM produto
+                  INNER JOIN produto_ingrediente ON (produto.cod_produto = produto_ingrediente.fk_cod_produto)
+                  INNER JOIN ingrediente ON (produto_ingrediente.fk_cod_ingrediente = ingrediente.cod_ingrediente)
+                  INNER JOIN tipo_medida ON (ingrediente.fk_cod_tipo_medida = tipo_medida.cod_tipo_medida)
+                  ORDER BY produto.nome
+```
 ![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.6/9.6-select2.png)
 
+```
+SELECT  produto.nome as nome_produto,
+                          preparo.ordem,
+                          preparo.descricao_passo as passo
+                  FROM produto
+                  INNER JOIN preparo ON (produto.cod_produto = preparo.fk_cod_produto)
+                  ORDER BY produto.nome,ordem
+```
 ![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.6/9.6-select3.png)
 
+```
+SELECT  cliente.nome as nome_cliente,
+                          telefone.descricao as telefone,
+                          produto.nome as produto,
+                          pedido.data_hora_entrega_prevista,
+                          pedido.preco_total as valor_total_pedido,
+                          tipo_pagamento.descricao as tipo_pagamento
+                  FROM pedido
+                  INNER JOIN cliente ON (pedido.fk_cod_cliente = cliente.cod_cliente)
+                  INNER JOIN telefone ON (cliente.cod_cliente = telefone.fk_cod_cliente)
+                  INNER JOIN tipo_pagamento ON (tipo_pagamento.cod_tipo_pagamento = pedido.fk_cod_tipo_pagamento)
+                  INNER JOIN pedido_produto ON (pedido.cod_pedido = pedido_produto.fk_cod_pedido)
+                  INNER JOIN produto ON (produto.cod_produto = pedido_produto.fk_cod_produto)
+                  ORDER BY cliente.nome
+```
 ![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.6/9.6-select4.png)
 
+```
+SELECT  cliente.nome as nome_cliente,
+                          telefone.descricao as numero_telefone
+                  FROM cliente
+                  INNER JOIN telefone ON (telefone.fk_cod_cliente = cliente.cod_cliente)
+                  ORDER BY cliente.nome
+```
 ![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.6/9.6-select5.png)
 
+```
+SELECT  cliente.nome as nome_cliente,
+                          pedido.cod_pedido as numero_pedido,
+                          produto.nome as nome_produto
+                  FROM cliente
+                  INNER JOIN pedido ON (pedido.fk_cod_cliente = cliente.cod_cliente)
+                  INNER JOIN pedido_produto ON (pedido.cod_pedido = pedido_produto.fk_cod_pedido)
+                  INNER JOIN produto ON (produto.cod_produto = pedido_produto.fk_cod_produto)
+                  ORDER BY cliente.nome
+```
 ![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.6/9.6-select6.png)
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO<br>
 [Consultas no COLAB - 9.7](https://colab.research.google.com/drive/1vZfDT5thmpoBE70Mz6RdlyPIipsMfxGV?usp=sharing?raw=true "Title")
 
+
+```
+SELECT 	fk_cod_pedido AS numero_pedido, 
+                          SUM(quantidade*preco) AS valor_total_pedido
+                  FROM pedido_produto
+                  GROUP BY fk_cod_pedido
+                  ORDER BY fk_cod_pedido
+```
 ![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.7/9.7-select1.png)
 
+```
+SELECT COUNT(cod_cliente) AS quantidade_cliente_no_sistema
+                  FROM cliente
+```
 ![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.7/9.7-select2.png)
 
+```
+SELECT 	tipo_pagamento.descricao as tipo_pagamento,
+                          COUNT(pedido.fk_cod_tipo_pagamento) AS quantidade_utilizada_forma_pagamento
+                  FROM pedido
+                  INNER JOIN tipo_pagamento ON (tipo_pagamento.cod_tipo_pagamento = pedido.fk_cod_tipo_pagamento)
+                  GROUP BY tipo_pagamento.descricao
+```
 ![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.7/9.7-select3.png)
 
+```
+SELECT 	produto.nome AS nome_produto,
+                          COUNT(produto_ingrediente.fk_cod_ingrediente) AS quantidade_ingredientes_no_produto
+                  FROM produto
+                  INNER JOIN produto_ingrediente ON (produto.cod_produto = produto_ingrediente.fk_cod_produto)
+                  GROUP BY produto.nome
+                  ORDER BY produto.nome
+```
 ![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.7/9.7-select4.png)
 
+```
+SELECT AVG(preco_total) AS media_preco_pedidos FROM pedido
+```
 ![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.7/9.7-select5.png)
 
+```
+SELECT 	pedido.cod_pedido AS numero_pedido,
+                      cliente.nome AS nome_cliente,
+                      COUNT(pedido_produto.fk_cod_produto) AS quantidade_produto_no_pedido
+                  FROM pedido
+                  INNER JOIN cliente ON (pedido.fk_cod_cliente = cliente.cod_cliente)
+                  INNER JOIN pedido_produto ON (pedido.cod_pedido = pedido_produto.fk_cod_pedido)
+                  GROUP BY pedido.cod_pedido, cliente.nome
+                  ORDER BY pedido.cod_pedido
+```
 ![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.7/9.7-select6.png)
 
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN <br>
