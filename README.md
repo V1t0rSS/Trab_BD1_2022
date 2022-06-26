@@ -342,37 +342,192 @@ INSERT INTO telefone VALUES
 [Arquivo em sql - DROP/CREATE/INSERT](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/arquivos/BD-CandySystem.sql?raw=true "Title")
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
-#### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
-[Consultas no COLAB](https://colab.research.google.com/drive/1OJhC1kUK6bbt_VKg-hz9nJS60OJidT7u?usp=sharing?raw=true "Title")
+#### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS<br>
+[Consultas no COLAB - 9.1](https://colab.research.google.com/drive/1OJhC1kUK6bbt_VKg-hz9nJS60OJidT7u?usp=sharing?raw=true "Title")
 
-#### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
-[Consultas no COLAB](https://colab.research.google.com/drive/1dNiBibPb6vurhAvR5YxppJmfPXLmLFy9?usp=sharing?usp=sharing?raw=true "Title")
+#### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE<br>
+[Consultas no COLAB - 9.2](https://colab.research.google.com/drive/1dNiBibPb6vurhAvR5YxppJmfPXLmLFy9?usp=sharing?usp=sharing?raw=true "Title")
 
-#### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11) <br>
-[Consultas no COLAB](https://colab.research.google.com/drive/1942GfBfeyVaW_pVip5UW0IM9Bk-bsKBZ?usp=sharing?raw=true "Title")
+```
+SELECT * FROM pedido
+WHERE data_hora_entrega_prevista > '2022-05-23'
+```
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.2/9.2-select1.png)
 
-#### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
-[Consultas no COLAB](https://colab.research.google.com/drive/1IS5huMMTbUdI84mEn8GMc25M9Zq_m-mH?usp=sharing?raw=true "Title")
+```
+SELECT * FROM pedido
+WHERE preco_total < 100
+```
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.2/9.2-select2.png)
 
-#### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
+```
+SELECT * FROM produto
+WHERE preco = 50
+```
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.2/9.2-select3.png)
+
+```
+SELECT * FROM preparo
+WHERE fk_cod_produto = 2
+```
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.2/9.2-select4.png)
+
+#### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS <br>
+[Consultas no COLAB - 9.3](https://colab.research.google.com/drive/1942GfBfeyVaW_pVip5UW0IM9Bk-bsKBZ?usp=sharing?raw=true "Title")
+
+```
+SELECT * FROM cliente 
+WHERE nome = 'Camila Volponi' OR nome = 'Vitor da Silva'
+```
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.3/9.3-select1.png)
+
+```
+SELECT * FROM produto
+WHERE (NOT preco=50)
+```
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.3/9.3-select2.png)
+
+```
+SELECT * FROM pedido
+WHERE (data_hora_criacao>'2022-05-19' AND data_hora_entrega_prevista>'2022-05-23')
+```
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.3/9.3-select3.png)
+
+```
+SELECT * FROM produto_ingrediente
+WHERE (quantidade>1 AND fk_cod_produto=2)
+```
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.3/9.3-select4.png)
+
+```
+SELECT * FROM pedido_produto
+WHERE (quantidade>1 OR preco=50)
+```
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.3/9.3-select5.png)
+
+```
+SELECT nome, preco, (preco*0.8) AS preco_com_desconto FROM produto
+```
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.3/9.3-select6.png)
+
+```
+SELECT cod_ped_prod, quantidade, preco, quantidade*preco AS valor_total_por_produto FROM pedido_produto
+```
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.3/9.3-select7.png)
+
+```
+SELECT cod_ped_prod, quantidade*2 AS quantidade_dobrada, preco*2 AS preco_dobrada FROM pedido_produto
+WHERE cod_ped_prod=2
+```
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.3/9.3-select8.png)
+
+```
+SELECT cod_pedido AS numero_pedido, fk_cod_cliente AS cliente, fk_cod_tipo_pagamento AS pagamento_credito FROM pedido AS pedido_credito
+WHERE fk_cod_tipo_pagamento=3
+```
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.3/9.3-select9.png)
+
+```
+SELECT cod_pedido AS numero_pedido, fk_cod_cliente AS cliente, preco_total AS total_igual_50 FROM pedido 
+WHERE preco_total=50
+```
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.3/9.3-select10.png)
+
+```
+SELECT cod_produto AS numero_produto, nome AS nome_produto, preco AS preco_abaixo_40 FROM produto
+WHERE preco<40
+```
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.3/9.3-select11.png)
+
+
+#### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS <br>
+[Consultas no COLAB - 9.4](https://colab.research.google.com/drive/1IS5huMMTbUdI84mEn8GMc25M9Zq_m-mH?usp=sharing?raw=true "Title")
+
+```
+select * from cliente 
+where nome like 'M%';
+```
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.4/9.4-select1.png)
+
+```
+select * from cliente
+where nome like '%a';
+```
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.4/9.4-select2.png)
+
+```
+select * from cliente
+where nome ilike '%si%';
+```
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.4/9.4-select3.png)
+
+```
+select * from produto 
+where nome like '_ento%';
+```
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.4/9.4-select4.png)
+
+```
+select * from produto
+where nome like '_____d%';
+```
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.4/9.4-select5.png)
+
+```
+select * from tipo_pagamento where descricao ilike 'p_%y'
+```
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.4/9.4-select6.png)
+
+```
+select * from ingrediente
+where nome ilike 'f%o' or nome like '%ó'
+```
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.4/9.4-select7.png)
+
+```
+select data_hora_criacao, current_date as data_atual, current_date - data_hora_criacao as tempo_desde_pedido from pedido;
+```
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.4/9.4-select8.png)
+
+```
+select data_hora_criacao, now() as data_atual, now() - data_hora_criacao as tempo_desde_pedido from pedido;
+```
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.4/9.4-select9.png)
+
+```
+select data_hora_criacao, now() as data_atual, age(data_hora_criacao) from pedido;
+```
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.4/9.4-select10.png)
+
+```
+select data_hora_entrega_prevista, now() as data_hora_agora, age(data_hora_entrega_prevista) as tempo_entrega_atrasada from pedido;
+```
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.4/9.4-select11.png)
+
+```
+select cod_pedido, data_hora_entrega_prevista, extract('day' from data_hora_entrega_prevista) as dia_entregas from pedido;
+```
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.4/9.4-select12.png)
+
+#### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS<br>
     a) Criar minimo 3 de exclusão
     b) Criar minimo 3 de atualização
 
-#### 9.6	CONSULTAS COM INNER JOIN E ORDER BY (Mínimo 6)<br>
-[Consultas no COLAB](https://colab.research.google.com/drive/1Kz7MayLSaMfWQkr3a8QKjztMmP64176j?usp=sharing?raw=true "Title")
+#### 9.6	CONSULTAS COM INNER JOIN E ORDER BY<br>
+[Consultas no COLAB - 9.6](https://colab.research.google.com/drive/1Kz7MayLSaMfWQkr3a8QKjztMmP64176j?usp=sharing?raw=true "Title")
 
-#### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
-[Consultas no COLAB](https://colab.research.google.com/drive/1vZfDT5thmpoBE70Mz6RdlyPIipsMfxGV?usp=sharing?raw=true "Title")
+#### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO<br>
+[Consultas no COLAB - 9.7](https://colab.research.google.com/drive/1vZfDT5thmpoBE70Mz6RdlyPIipsMfxGV?usp=sharing?raw=true "Title")
 
-#### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
-[Consultas no COLAB](https://colab.research.google.com/drive/1Hcm0Vt3MAxPxVZBcYJkyvFLpTajzbYgd?usp=sharing?raw=true "Title")
+#### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN <br>
+[Consultas no COLAB - 9.8](https://colab.research.google.com/drive/1Hcm0Vt3MAxPxVZBcYJkyvFLpTajzbYgd?usp=sharing?raw=true "Title")
 
-#### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
+#### 9.9	CONSULTAS COM SELF JOIN E VIEW <br>
         a) Dentro do escopo do nosso trabalho não existem autorelações ou qualquer tabela que poderia assumir esse papel em uma seleção. Só existe um tipo de usuário do sistema e as tabelas que se relacionam com o produto ou os pedidos não fariam sentido se relacionando com elas mesmas.
-[Consultas no COLAB](https://colab.research.google.com/drive/1DWi7mOg6zdhu82ZpnroiaZ3hKHA4DUrf?usp=sharing?raw=true "Title")
+[Consultas no COLAB - 9.9](https://colab.research.google.com/drive/1DWi7mOg6zdhu82ZpnroiaZ3hKHA4DUrf?usp=sharing?raw=true "Title")
 
-#### 9.10	SUBCONSULTAS (Mínimo 4)<br>
-[Consultas no COLAB](https://colab.research.google.com/drive/1kLvbrXyN2v_YGV2uhMFI3nMFIOb0B24R?usp=sharing?raw=true "Title")
+#### 9.10	SUBCONSULTAS <br>
+[Consultas no COLAB - 9.10](https://colab.research.google.com/drive/1kLvbrXyN2v_YGV2uhMFI3nMFIOb0B24R?usp=sharing?raw=true "Title")
 
 ># Marco de Entrega 02: Do item 9.2 até o ítem 9.10<br>
 
