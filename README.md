@@ -557,8 +557,31 @@ select cod_pedido, data_hora_entrega_prevista, extract('day' from data_hora_entr
         a) Dentro do escopo do nosso trabalho não existem autorelações ou qualquer tabela que poderia assumir esse papel em uma seleção. Só existe um tipo de usuário do sistema e as tabelas que se relacionam com o produto ou os pedidos não fariam sentido se relacionando com elas mesmas.
 [Consultas no COLAB - 9.9](https://colab.research.google.com/drive/1DWi7mOg6zdhu82ZpnroiaZ3hKHA4DUrf?usp=sharing?raw=true "Title")
 
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.9/9.9-select1.png)
+
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.9/9.9-select2.png)
+
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.9/9.9-select3.png)
+
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.9/9.9-select4.png)
+
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.9/9.9-select5.png)
+
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.9/9.9-select6.png)
+
 #### 9.10	SUBCONSULTAS <br>
 [Consultas no COLAB - 9.10](https://colab.research.google.com/drive/1kLvbrXyN2v_YGV2uhMFI3nMFIOb0B24R?usp=sharing?raw=true "Title")
+
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.10/9.10-select1.png)
+
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.10/9.10-select2.png)
+
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.10/9.10-select3.png)
+
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.10/9.10-select4.png)
+
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.10/9.10-select5.png)
+
 
 ># Marco de Entrega 02: Do item 9.2 até o ítem 9.10<br>
 
