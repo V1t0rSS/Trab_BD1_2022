@@ -510,8 +510,7 @@ select cod_pedido, data_hora_entrega_prevista, extract('day' from data_hora_entr
 ![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.4/9.4-select12.png)
 
 #### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS<br>
-    a) Criar minimo 3 de exclusão
-    b) Criar minimo 3 de atualização
+[Consultas no COLAB - 9.5](https://colab.research.google.com/drive/1h4hulfm60yyMqPPG_WQOSMkcw10b2qWT?usp=sharing?raw=true "Title")
 
 #### 9.6	CONSULTAS COM INNER JOIN E ORDER BY<br>
 [Consultas no COLAB - 9.6](https://colab.research.google.com/drive/1Kz7MayLSaMfWQkr3a8QKjztMmP64176j?usp=sharing?raw=true "Title")
