@@ -368,12 +368,11 @@ INSERT INTO telefone VALUES
 [Consultas no COLAB](https://colab.research.google.com/drive/1Hcm0Vt3MAxPxVZBcYJkyvFLpTajzbYgd?usp=sharing?raw=true "Title")
 
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
-        a) Uma junção que envolva Self Join (caso não ocorra na base justificar e substituir por uma view)
-        b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
+        a) Dentro do escopo do nosso trabalho não existem autorelações ou qualquer tabela que poderia assumir esse papel em uma seleção. Só existe um tipo de usuário do sistema e as tabelas que se relacionam com o produto ou os pedidos não fariam sentido se relacionando com elas mesmas.
+[Consultas no COLAB](https://colab.research.google.com/drive/1DWi7mOg6zdhu82ZpnroiaZ3hKHA4DUrf?usp=sharing?raw=true "Title")
 
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
-     a) Criar minimo 1 envolvendo GROUP BY
-     b) Criar minimo 1 envolvendo algum tipo de junção
+[Consultas no COLAB](https://colab.research.google.com/drive/1kLvbrXyN2v_YGV2uhMFI3nMFIOb0B24R?usp=sharing?raw=true "Title")
 
 ># Marco de Entrega 02: Do item 9.2 até o ítem 9.10<br>
 
