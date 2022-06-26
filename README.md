@@ -511,7 +511,7 @@ select cod_pedido, data_hora_entrega_prevista, extract('day' from data_hora_entr
 
 #### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS<br>
 [Consultas no COLAB - 9.5](https://colab.research.google.com/drive/1h4hulfm60yyMqPPG_WQOSMkcw10b2qWT?usp=sharing?raw=true "Title")
-
+```
 delete from cliente 
 where cod_cliente > 6
 
@@ -532,6 +532,9 @@ where cod_telefone = 6
 update tipo_medida 
 set descricao = 'Porção'
 where cod_tipo_medida = 1
+
+```
+
 
 #### 9.6	CONSULTAS COM INNER JOIN E ORDER BY<br>
 [Consultas no COLAB - 9.6](https://colab.research.google.com/drive/1Kz7MayLSaMfWQkr3a8QKjztMmP64176j?usp=sharing?raw=true "Title")
@@ -682,41 +685,167 @@ SELECT 	pedido.cod_pedido AS numero_pedido,
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN <br>
 [Consultas no COLAB - 9.8](https://colab.research.google.com/drive/1Hcm0Vt3MAxPxVZBcYJkyvFLpTajzbYgd?usp=sharing?raw=true "Title")
 
+```
+select cliente.nome as nome_cliente,pedido.cod_pedido from cliente
+                  left join pedido on (cliente.cod_cliente = pedido.fk_cod_cliente)
+```
 ![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.8/9.8-select1.png)
 
+```
+select produto.nome as nome_produto, pedido_produto.fk_cod_pedido as pedido from pedido_produto
+                  right join produto on (produto.cod_produto = pedido_produto.fk_cod_pedido)
+                  order by pedido;
+```
 ![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.8/9.8-select2.png)
 
+```
+select cliente.nome, telefone.descricao, pedido.cod_pedido from cliente 
+                  full join telefone on (cliente.cod_cliente = telefone.fk_cod_cliente)
+                  full join pedido on (cliente.cod_cliente = pedido.fk_cod_cliente)
+```
 ![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.8/9.8-select3.png)
 
+```
+select produto.nome, preparo.descricao_passo from produto 
+                   left join preparo on (produto.cod_produto = preparo.fk_cod_produto)
+```
 ![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.8/9.8-select4.png)
 
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW <br>
         a) Dentro do escopo do nosso trabalho não existem autorelações ou qualquer tabela que poderia assumir esse papel em uma seleção. Só existe um tipo de usuário do sistema e as tabelas que se relacionam com o produto ou os pedidos não fariam sentido se relacionando com elas mesmas.
 [Consultas no COLAB - 9.9](https://colab.research.google.com/drive/1DWi7mOg6zdhu82ZpnroiaZ3hKHA4DUrf?usp=sharing?raw=true "Title")
 
+```
+CREATE VIEW cliente_pedido AS
+                  SELECT pedido.cod_pedido AS numero_pedido,
+                          cliente.nome AS nome_cliente
+                  FROM pedido
+                  INNER JOIN cliente ON (pedido.fk_cod_cliente = cliente.cod_cliente)
+```
+```
+SELECT * FROM cliente_pedido
+```
 ![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.9/9.9-select1.png)
 
+```
+CREATE VIEW produto_em_pedido AS
+                  SELECT pedido.cod_pedido as numero_pedido,
+                        produto.nome as nome_produto
+                  FROM pedido
+                  INNER JOIN pedido_produto ON (pedido.cod_pedido = pedido_produto.fk_cod_pedido)
+                  INNER JOIN produto ON (produto.cod_produto = pedido_produto.fk_cod_produto)
+                  ORDER BY pedido.cod_pedido
+```
+```
+SELECT * FROM produto_em_pedido
+```
 ![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.9/9.9-select2.png)
 
+```
+CREATE VIEW ingrediente_em_produto AS
+                  SELECT 	produto.nome AS nome_produto, 
+                      ingrediente.nome AS nome_ingrediente, 
+                      tipo_medida.descricao AS tipo_medida
+                  FROM produto
+                  INNER JOIN produto_ingrediente ON (produto.cod_produto = produto_ingrediente.fk_cod_produto)
+                  INNER JOIN ingrediente ON (produto_ingrediente.fk_cod_ingrediente = ingrediente.cod_ingrediente)
+                  INNER JOIN tipo_medida ON (ingrediente.fk_cod_tipo_medida = tipo_medida.cod_tipo_medida)
+```
+```
+SELECT * FROM ingrediente_em_produto
+```
 ![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.9/9.9-select3.png)
 
+```
+CREATE VIEW preparo_em_produto AS
+                  SELECT 	produto.nome, 
+                      preparo.ordem,
+                      preparo.descricao_passo
+                  FROM produto
+                  INNER JOIN preparo ON (produto.cod_produto = preparo.fk_cod_produto) 
+```
+```
+SELECT * FROM preparo_em_produto
+```
 ![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.9/9.9-select4.png)
 
+```
+CREATE VIEW telefone_em_cliente AS
+                  SELECT 	cliente.nome AS nome_cliente,
+                      telefone.descricao AS numero_telefone
+                  FROM cliente
+                  INNER JOIN telefone ON (cliente.cod_cliente = telefone.fk_cod_cliente)
+                  ORDER BY cliente.nome
+```
+```
+SELECT * FROM telefone_em_cliente
+```
 ![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.9/9.9-select5.png)
 
+```
+CREATE VIEW pedido_pagamento AS
+                  SELECT 	pedido.cod_pedido AS numero_pedido,
+                      pedido.data_hora_entrega_prevista,
+                      pedido.preco_total AS valor_total_pedido,
+                      tipo_pagamento.descricao AS tipo_pagamento
+                  FROM pedido
+                  INNER JOIN tipo_pagamento ON (tipo_pagamento.cod_tipo_pagamento = pedido.fk_cod_tipo_pagamento)
+                  ORDER BY pedido.cod_pedido
+```
+```
+SELECT * FROM pedido_pagamento
+```
 ![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.9/9.9-select6.png)
 
 #### 9.10	SUBCONSULTAS <br>
 [Consultas no COLAB - 9.10](https://colab.research.google.com/drive/1kLvbrXyN2v_YGV2uhMFI3nMFIOb0B24R?usp=sharing?raw=true "Title")
 
+```
+select cod_ped_prod, preco from pedido_produto 
+where preco < (select avg(pedido_produto.preco) from pedido_produto);
+```
 ![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.10/9.10-select1.png)
 
+```
+SELECT 	ingrediente.nome AS nome_ingrediente, 
+                          tipo_medida.descricao AS tipo_medida
+                  FROM ingrediente
+                  INNER JOIN tipo_medida ON (ingrediente.fk_cod_tipo_medida = tipo_medida.cod_tipo_medida) 
+                  WHERE tipo_medida.descricao NOT IN (SELECT tipo_medida.descricao FROM tipo_medida WHERE tipo_medida.descricao = 'Unidade' OR tipo_medida.descricao = 'Colher de sopa');
+```
 ![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.10/9.10-select2.png)
 
+```
+SELECT 	produto.cod_produto,
+                      sum(pedido.preco_total) AS preco_total_lucrado
+                  FROM pedido 
+                  INNER JOIN pedido_produto ON (pedido.cod_pedido = pedido_produto.fk_cod_pedido)
+                  INNER JOIN produto ON (pedido_produto.fk_cod_produto = produto.cod_produto)
+                  WHERE pedido.preco_total IN (SELECT pedido.preco_total FROM pedido WHERE pedido.preco_total > 50) 
+                  GROUP BY produto.cod_produto
+                  ORDER BY produto.cod_produto
+```
 ![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.10/9.10-select3.png)
 
+```
+select pedido.cod_pedido, pedido.preco_total, produto.preco 
+                  from pedido 
+                  inner join (select distinct produto.preco from pedido_produto
+                              inner join produto on (pedido_produto.fk_cod_produto = produto.cod_produto)) as produto
+                  on (pedido.preco_total = produto.preco);
+```
 ![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.10/9.10-select4.png)
 
+```
+select (count(fk_cod_ingrediente)) as ing_por_produto
+                  from produto_ingrediente 
+                  group by fk_cod_produto
+                  having count(fk_cod_ingrediente) < (
+                    select (count(fk_cod_ingrediente))
+                    from produto_ingrediente 
+                    group by fk_cod_produto
+                    limit(1))
+```
 ![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.10/9.10-select5.png)
 
 
