@@ -515,11 +515,43 @@ select cod_pedido, data_hora_entrega_prevista, extract('day' from data_hora_entr
 #### 9.6	CONSULTAS COM INNER JOIN E ORDER BY<br>
 [Consultas no COLAB - 9.6](https://colab.research.google.com/drive/1Kz7MayLSaMfWQkr3a8QKjztMmP64176j?usp=sharing?raw=true "Title")
 
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.6/9.6-select1.png)
+
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.6/9.6-select2.png)
+
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.6/9.6-select3.png)
+
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.6/9.6-select4.png)
+
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.6/9.6-select5.png)
+
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.6/9.6-select6.png)
+
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO<br>
 [Consultas no COLAB - 9.7](https://colab.research.google.com/drive/1vZfDT5thmpoBE70Mz6RdlyPIipsMfxGV?usp=sharing?raw=true "Title")
 
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.7/9.7-select1.png)
+
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.7/9.7-select2.png)
+
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.7/9.7-select3.png)
+
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.7/9.7-select4.png)
+
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.7/9.7-select5.png)
+
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.7/9.7-select6.png)
+
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN <br>
 [Consultas no COLAB - 9.8](https://colab.research.google.com/drive/1Hcm0Vt3MAxPxVZBcYJkyvFLpTajzbYgd?usp=sharing?raw=true "Title")
+
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.8/9.8-select1.png)
+
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.8/9.8-select2.png)
+
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.8/9.8-select3.png)
+
+![Alt text](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/images/topicos%209.2%20ao%209.10/9.8/9.8-select4.png)
 
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW <br>
         a) Dentro do escopo do nosso trabalho não existem autorelações ou qualquer tabela que poderia assumir esse papel em uma seleção. Só existe um tipo de usuário do sistema e as tabelas que se relacionam com o produto ou os pedidos não fariam sentido se relacionando com elas mesmas.
