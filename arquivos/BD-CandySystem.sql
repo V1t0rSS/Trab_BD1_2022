@@ -85,7 +85,8 @@ INSERT INTO pedido VALUES
 	(2,	'2022-05-18 10:11', '2022-05-22 10:11', 50,	5, 2),
 	(3,	'2022-05-19 10:11', '2022-05-23 10:11', 150, 3, 3),
 	(4,	'2022-05-20 10:11', '2022-05-24 10:11', 100, 3, 4),
-	(5,	'2022-05-21 10:11', '2022-05-25 10:11', 50, 2, 5);
+	(5,	'2022-05-21 10:11', '2022-05-25 10:11', 50, 2, 5),
+	(6,	'2021-05-21 10:11', '2022-08-25 10:11', 200, 5, 9);
 
 INSERT INTO produto VALUES
 	(1, 'Cento de brigadeiro', 50),
@@ -107,27 +108,35 @@ INSERT INTO cliente VALUES
 	(2, 'Camila Volponi'),
 	(3, 'Mariazinha Feirreira'),
 	(4, 'Vitor da Silva'),
-	(5,	'Marcelo da Vitória');
+	(5,	'Marcelo da Vitória'),
+	(6,'Clara Santos'),
+	(7,'Higor Silva'),
+	(8,'Gustavo Ferrari '),
+	(9,'Mariah Ferrari ');
 	
 INSERT INTO telefone VALUES
 	(1, '27 99999-1111', 1),
 	(2, '27 99999-2222', 2),
 	(3, '27 99999-3333', 3),
 	(4, '27 99999-4444', 4),
-	(5,	'27 99999-5555', 5);
+	(5, '27 99999-5555', 5),
+	(6, '21 99555-6515',1),
+	(7, '21 92565-1447',1),
+	(8, '27 95545-1552',4),
+	(9, '21 94852-1566',9);
 	
 INSERT INTO tipo_medida VALUES
 	(1, 'Unidade'),
 	(2, 'Xicara'),
-	(3,	'Colher de sopa'),
-	(4,	'Copo'),
-	(5,	'Caixa'),
-	(6,	'A gosto');
+	(3, 'Colher de sopa'),
+	(4, 'Copo'),
+	(5, 'Caixa'),
+	(6, 'A gosto');
 
 INSERT INTO ingrediente VALUES	
-	(1,	'Ovo', 1),
-	(2,	'Açucar', 2),
-	(3,	'Fubá', 2),
+	(1, 'Ovo', 1),
+	(2, 'Açucar', 2),
+	(3, 'Fubá', 2),
 	(4, 'Farinha de trigo', 3),
 	(5, 'Óleo', 4),
 	(6, 'Leite', 4),
@@ -138,14 +147,15 @@ INSERT INTO ingrediente VALUES
 	(11, 'Chocolate granulado', 6);
 		
 INSERT INTO pedido_produto VALUES
-	(1, 1, 50,	2,	1),
-	(2, 2, 50,	3,	3),
-	(3, 1, 50,	3,	1),
-	(4, 1, 30,	5,	4),
-	(5, 1, 20,	5,	5),
-	(6, 1, 50,	1,	1),
-	(7, 1, 50,	1,	3),
-	(8, 5, 20,	4,	5);
+	(1, 1, 50, 2,	1),
+	(2, 2, 50, 3,	3),
+	(3, 1, 50, 3,	1),
+	(4, 1, 30, 5,	4),
+	(5, 1, 20, 5,	5),
+	(6, 1, 50, 1,	1),
+	(7, 1, 50, 1,	3),
+	(8, 5, 20, 4,	5),
+	(9, 1, 70, 6,	5);
 
 INSERT INTO produto_ingrediente VALUES
 	(1, 3,	2,	1),
