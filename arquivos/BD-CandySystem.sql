@@ -171,18 +171,18 @@ INSERT INTO produto_ingrediente VALUES
 	(11, 1,	1,	11);
 
 ALTER TABLE pedido		 
-ADD CONSTRAINT fk_tipo_pagamento FOREIGN KEY (fk_cod_tipo_pagamento) REFERENCES tipo_pagamento(cod_tipo_pagamento),
-ADD CONSTRAINT fk_cliente FOREIGN KEY (fk_cod_cliente) REFERENCES cliente(cod_cliente);
+ADD CONSTRAINT fk_tipo_pagamento FOREIGN KEY (fk_cod_tipo_pagamento) REFERENCES tipo_pagamento(cod_tipo_pagamento) ON DELETE CASCADE,
+ADD CONSTRAINT fk_cliente FOREIGN KEY (fk_cod_cliente) REFERENCES cliente(cod_cliente) ON DELETE CASCADE;
 
 ALTER TABLE pedido_produto		 
-ADD CONSTRAINT fk_pedido FOREIGN KEY (fk_cod_pedido) REFERENCES pedido(cod_pedido),
-ADD CONSTRAINT fk_produto FOREIGN KEY (fk_cod_produto) REFERENCES produto(cod_produto);
+ADD CONSTRAINT fk_pedido FOREIGN KEY (fk_cod_pedido) REFERENCES pedido(cod_pedido) ON DELETE CASCADE,
+ADD CONSTRAINT fk_produto FOREIGN KEY (fk_cod_produto) REFERENCES produto(cod_produto) ON DELETE CASCADE;
 
 ALTER TABLE preparo
 ADD CONSTRAINT fk_produto_preparo FOREIGN KEY(fk_cod_produto) REFERENCES produto(cod_produto);
 
 ALTER TABLE telefone		 
-ADD CONSTRAINT fk_telefone_cliente FOREIGN KEY(fk_cod_cliente) REFERENCES cliente(cod_cliente);
+ADD CONSTRAINT fk_telefone_cliente FOREIGN KEY(fk_cod_cliente) REFERENCES cliente(cod_cliente) ON DELETE CASCADE;
 
 ALTER TABLE ingrediente		 
 ADD CONSTRAINT fk_tipo_medida FOREIGN KEY(fk_cod_tipo_medida) REFERENCES tipo_medida(cod_tipo_medida);
