@@ -39,7 +39,7 @@ CREATE TABLE produto (
 
 CREATE TABLE preparo (
     cod_preparo INTEGER PRIMARY KEY,
-    descricao_passo VARCHAR(100),
+    descricao_passo VARCHAR(500),
     ordem INTEGER,
     fk_cod_produto INTEGER
 );
@@ -212,7 +212,9 @@ INSERT INTO tipo_medida VALUES
 	(3, 'Colher de sopa'),
 	(4, 'Copo'),
 	(5, 'Caixa'),
-	(6, 'A gosto');
+	(6, 'A gosto'),
+	(7, 'Colher de chá'),
+    	(8, 'Gramas');
 
 INSERT INTO ingrediente VALUES	
 	(1, 'Ovo', 1),
