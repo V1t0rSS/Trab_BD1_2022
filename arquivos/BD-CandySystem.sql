@@ -238,7 +238,9 @@ INSERT INTO ingrediente VALUES
 	(19, 'Essência de bounilha', 7),
 	(20, 'Clara do ovo', 1),
 	(21, 'Gelatina em pó', 1),
-	(22, 'Milho de pipoca', 1);
+	(22, 'Milho de pipoca', 1),
+	(23, 'Ganache', 8),
+    	(24, 'Pasta amaricana', 8);
 		
 INSERT INTO pedido_produto VALUES
 	(1,	1, 50, 2, 1),
