@@ -852,12 +852,7 @@ select (count(fk_cod_ingrediente)) as ing_por_produto
 ># Marco de Entrega 02: Do item 9.2 até o ítem 9.10<br>
 
 ### 10 RELATÓRIOS E GRÁFICOS
-
-#### a) análises e resultados provenientes do banco de dados desenvolvido (usar modelo disponível)
-#### b) link com exemplo de relatórios será disponiblizado pelo professor no AVA
-#### OBS: Esta é uma atividade de grande relevância no contexto do trabalho. Mantenha o foco nos 5 principais relatórios/resultados visando obter o melhor resultado possível.
-
-    
+[Relatórios no COLAB - 9.5](https://drive.google.com/file/d/1HrNwNVGu_W2Nc0pCkEMCmJfDHNWT1mQt/view?usp=sharing?raw=true "Title")
 
 ### 11	AJUSTES DA DOCUMENTAÇÃO, CRIAÇÃO DOS SLIDES E VÍDEO PARA APRESENTAÇAO FINAL <br>
 
