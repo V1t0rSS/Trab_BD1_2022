@@ -855,16 +855,7 @@ select (count(fk_cod_ingrediente)) as ing_por_produto
 [Relatórios no COLAB](https://drive.google.com/file/d/1HrNwNVGu_W2Nc0pCkEMCmJfDHNWT1mQt/view?usp=sharing?raw=true "Title")
 
 ### 11	AJUSTES DA DOCUMENTAÇÃO, CRIAÇÃO DOS SLIDES E VÍDEO PARA APRESENTAÇAO FINAL <br>
-
-#### a) Modelo (pecha kucha)<br>
-#### b) Tempo de apresentação 6:40 
-
-># Marco de Entrega 03: Itens 10 e 11<br>
-<br>
-<br>
-<br> 
-
-
+[Slides](https://github.com/VitorSSilva21/Trab_BD1_2022/blob/master/arquivos/Candy%20System%20-%20BD1.pdf?raw=true "Title")
 
 ### 12 FORMATACAO NO GIT:<br> 
 https://help.github.com/articles/basic-writing-and-formatting-syntax/
@@ -874,7 +865,6 @@ https://help.github.com/articles/basic-writing-and-formatting-syntax/
     https://help.github.com/articles/about-writing-and-formatting-on-github/
     
 ##### Basic Formatting in Git
-    
     https://help.github.com/articles/basic-writing-and-formatting-syntax/#referencing-issues-and-pull-requests
     
     
